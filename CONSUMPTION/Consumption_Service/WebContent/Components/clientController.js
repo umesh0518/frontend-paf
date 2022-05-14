@@ -108,6 +108,59 @@ $(document).on("click", ".btnUpdateConsumption", function(event)
 });
 
 
+
+
+// DELETE======================================================================
+$(document).on("click", ".btnRemoveConsumption", function(event)
+{
+
+ 		$.ajax(
+ 		{
+			 url : "ConsumerAPI",
+			 type : "DELETE",
+			 data : "Consumption_ID=" + $(this).attr("data-itemid"),
+			 dataType : "text", 
+			 complete : function(response, status)
+			 {
+				onCompletionDeleteConsumption(response.responseText, status);
+							
+			 }
+ 		});
+});
+
+function onCompletionDeleteConsumption(response, status)
+{ 		
+	
+	if (status == "success")
+	 {
+	 		var resultSet = JSON.parse(response);
+
+	 		if (resultSet.status.trim() == "success")
+	 		{
+				 $("#alertSuccess").text("Successfully deleted.");
+				 $("#alertSuccess").show();
+				 
+				 $("#view_grid").html(resultSet.data);
+	 		} else if (resultSet.status.trim() == "error")
+	 		{
+				 $("#alertError").text(resultSet.data);
+				 $("#alertError").show();
+	 		}
+	 		
+	 } else if (status == "error")
+	 {
+			 $("#alertError").text("Error while deleting.");
+			 $("#alertError").show();
+	 } else
+	 {
+			 $("#alertError").text("Unknown error while deleting..");
+			 $("#alertError").show();
+	 }
+}
+
+
+
+
 // ==============CLIENT- model validation ===================
 function consumptionFormValidation()
 {
