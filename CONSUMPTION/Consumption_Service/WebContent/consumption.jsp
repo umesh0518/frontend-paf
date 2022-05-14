@@ -55,7 +55,8 @@
 			  	
 	           <div class="row mt-5">
 		           <div class="col"><button id="btnSaveConsumption" type="button" class="btn btn-success btn-block">Save Details</button></div>
-		           
+		           <div class="col"><button id="btnClearConsumption" type="reset" class="btn btn-secondary btn-block">Clear</button></div>
+		           <div class="col"><button id="btnReloadConsumption" class="btn btn-danger btn-block" onclick="location.reload();">Reload</button></div>
 	           </div>
 	            
 	            
