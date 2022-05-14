@@ -8,8 +8,6 @@ import java.sql.Statement;
 
 public class Consumption {
 
-	
-	
 	private Connection connect() {
 		Connection con = null;
 		try {
