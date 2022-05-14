@@ -13,8 +13,6 @@
  
   <script src="Views/js/jquery-3.4.0.min.js"></script>
   <script src="Views/js/bootstrap.min.js"></script>
-  
- 
   <script src = "Components/clientController.js" type="text/javascript"></script>
   
   
@@ -59,7 +57,6 @@
 		           <div class="col"><button id="btnReloadConsumption" class="btn btn-danger btn-block" onclick="location.reload();">Reload</button></div>
 	           </div>
 	            
-	            
 	            <input type="hidden" id="hideSaveBtn" name="hideSaveBtn" value="">
 	          </form>
 	          
@@ -68,7 +65,6 @@
 	    
 	  </div>
 	    
-	  
 	    
 	    <div class="row mb-5 mt-5 border">
 	        <div id="view_grid" class="col">
